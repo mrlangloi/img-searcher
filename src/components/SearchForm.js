@@ -1,7 +1,19 @@
-import React from "react";
-import { handleSearchSubmit, handleSearchTxtChange } from "../utils/searchFunctions";
+import React, { useState } from "react";
+import { beginSearch } from "../utils/search";
 
 function SearchForm() {
+
+  const [searchTxt, setSearchTxt] = useState("")
+
+  function handleSearchSubmit(e) {
+    e.preventDefault();
+    console.log(`Searching for ${searchTxt}`);
+    beginSearch(searchTxt);
+  }
+  
+  function handleSearchTxtChange(e) {
+    setSearchTxt(e.target.value);
+  }
 
   return (
 
