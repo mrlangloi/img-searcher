@@ -1,4 +1,5 @@
 import './App.css';
+import SearchForm from './components/SearchForm';
 import SearchResults from './components/SearchResults';
 
 function App() {
@@ -6,10 +7,7 @@ function App() {
     <div className="App">
       <h1>Image Search App</h1>
 
-      <form action="">
-        <input type="text" id="search-txt" placeholder="Search images..." />
-        <button id="search-btn">Search</button>
-      </form>
+      <SearchForm />
 
       <SearchResults />
 
