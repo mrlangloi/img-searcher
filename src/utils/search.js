@@ -5,11 +5,9 @@ let perPage = 6;
 async function beginSearch(searchTxt) {
   console.log("Searching...");
 
-  if(previousSearchTxt === searchTxt) {
-    pageNum++;
-  }
-  else {
+  if(previousSearchTxt != searchTxt) {
     pageNum = 1;
+    perPage = 6;
   }
 
   const url = `https://api.pexels.com/v1/search?query=${searchTxt}&page=${pageNum}&per_page=${perPage}`
@@ -28,5 +26,13 @@ async function beginSearch(searchTxt) {
   return data.photos;
 }
 
-export { beginSearch };
+async function loadMore() {
+  perPage += 6;
+
+  const results = await beginSearch(previousSearchTxt);
+
+  return results;
+}
+
+export { beginSearch, loadMore };
 
