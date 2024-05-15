@@ -1,20 +1,23 @@
-import { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import SearchForm from './components/SearchForm';
-import SearchResults from './components/SearchResults';
+import Navbar from './components/Navbar';
+import About from './pages/About';
+import Documentation from './pages/Documentation';
+import Error from './pages/Error';
+import SearchImages from './pages/SearchImages';
 
 function App() {
-
-  const [photos, setPhotos] = useState([]);
-
   return (
     <div className="App">
-      <h1>Image Search App</h1>
-
-      <SearchForm setPhotos={setPhotos}/>
-
-      <SearchResults photos={photos} setPhotos={setPhotos}/>
-
+      <Navbar />
+      <div>
+        <Switch>
+          <Route path="/" component={SearchImages} />
+          <Route path="/Documentation" component={Documentation} />
+          <Route path="/About" component={About} />
+          <Route component={Error} />
+        </Switch>
+      </div>
     </div>
   );
 }
