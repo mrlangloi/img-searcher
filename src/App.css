@@ -4,6 +4,7 @@
   font-family: "Varela Round", sans-serif;
   font-weight: 400;
   font-style: normal;
+  background-color: #2b2a33;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 
 h1 {
   text-align: center;
+  color: white;
 }
 
 form {
@@ -26,14 +28,16 @@ form {
   max-width: 400px;
   padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   font-size: 14px;
-  color: slategray;
+  color: #333;
+  background-color: white;
 }
 
 #search-btn {
   padding: 10px 20px;
-  margin-left: 10px;
+  margin-left: 20px;
   background-color: turquoise;
   color: white;
   border: none;
@@ -54,7 +58,7 @@ form {
   margin-bottom: 60px;
   width: 30%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   background-color: ivory;
@@ -62,28 +66,29 @@ form {
 
 .search-result img {
   width: 100%;
-  height: 100%;
+  height: 300px;
   object-fit: cover;
-  border-radius: 5px;
   margin-bottom: 10px;
-  transition: opacity 0.2s ease-in-out;
+  transition: filter 0.3s ease;
 }
 
 .search-result:hover img {
-  opacity: 0.8;
+  filter: brightness(70%);
 }
 
 .search-result a {
   font-size: 14px;
   text-decoration: none;
   color: #333;
+  background-color: ivory;
   display: block;
-  padding: 5px;
+  padding-bottom: 5px;
   text-transform: capitalize;
 }
 
 .search-result p {
-  margin: 5px;
+  margin: 5px 10px;
+  background-color: ivory;
 }
 
 #load-more-btn {
