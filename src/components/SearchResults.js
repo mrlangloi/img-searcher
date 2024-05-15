@@ -1,16 +1,33 @@
 import React from 'react';
+import { loadMore } from '../utils/search';
+import Placeholder from './Placeholder';
 
 function SearchResults(props) {
 
   const photos = props.photos;
 
+  if(photos === undefined) {
+    return (
+      <div className="search-results-div">
+        <h3>No results found</h3>
+      </div>
+    )
+  }
+  else if(photos.length === 0) {
+    return (
+      <Placeholder />
+    )
+  }
 
+  async function handleLoadMore(e) {
+    e.preventDefault();
+    const results = await loadMore();
+    props.setPhotos(results);
+  }
 
   return (
     <div className="search-results-div">
-
       <div className="search-results">
-
         {photos.map((photo) => {
           return (
             <div className="search-result" key={photo.id}>
@@ -21,30 +38,8 @@ function SearchResults(props) {
             </div>
           )
         })}
-
-
-
-        {/* <div className="search-result">
-        <a href="https://www.pexels.com/photo/top-view-photo-of-ramen-soup-2591594/" target="_blank">
-          <img src="https://images.pexels.com/photos/2591594/pexels-photo-2591594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Noodle soup" />
-          Noodle Soup
-        </a>
       </div>
-      <div className="search-result">
-        <a href="https://www.pexels.com/photo/top-view-photo-of-ramen-soup-2591594/" target="_blank">
-          <img src="https://images.pexels.com/photos/2591594/pexels-photo-2591594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Noodle soup" />
-          Noodle Soup
-        </a>
-      </div>
-      <div className="search-result">
-        <a href="https://www.pexels.com/photo/top-view-photo-of-ramen-soup-2591594/" target="_blank">
-          <img src="https://images.pexels.com/photos/2591594/pexels-photo-2591594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Noodle soup" />
-          Noodle Soup
-        </a>
-      </div> */}
-      </div>
-
-      <button id="load-more-btn">Load More</button>
+      <button id="load-more-btn" onClick={handleLoadMore}>Load More</button>
     </div>
   );
 }

@@ -13,7 +13,7 @@ function App() {
 
       <SearchForm setPhotos={setPhotos}/>
 
-      <SearchResults photos={photos}/>
+      <SearchResults photos={photos} setPhotos={setPhotos}/>
 
     </div>
   );
