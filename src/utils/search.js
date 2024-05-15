@@ -3,7 +3,6 @@ let pageNum = 1;
 let perPage = 6;
 
 async function beginSearch(searchTxt) {
-  console.log("Searching...");
 
   if(previousSearchTxt != searchTxt) {
     pageNum = 1;
@@ -20,8 +19,6 @@ async function beginSearch(searchTxt) {
     }
   });
   const data = await response.json();
-
-  console.log(data);
 
   return data.photos;
 }
