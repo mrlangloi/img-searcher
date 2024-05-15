@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <div className="about-div">
-      <h5>About Me</h5>
+      <h1>About Me</h1>
       <div className="about-p-div">
         <p>
           Image search web application by Ricky Cheung
@@ -15,7 +15,7 @@ function About() {
           <a href="https://github.com/mrlangloi/img-searcher" target="_blank" rel="noopener noreferrer">Github</a>
         </p>
       </div>
-      <h5>Sources</h5>
+      <h3>Sources</h3>
       <div className="about-p-div">
         <p>
           <a href="https://www.pexels.com/api/documentation/?language=javascript#" target="_blank" rel="noopener noreferrer">Pexels Image API</a>

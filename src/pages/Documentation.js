@@ -3,9 +3,11 @@ import React from "react";
 function Documentation() {
     return (
         <div className="documentation-div">
-            <h5>Documentation</h5>
+            <h1>Documentation</h1>
+            <div className="doc-p-div">
+              
+            </div>
         </div>
-        
     );
 }
 
