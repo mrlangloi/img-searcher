@@ -7,7 +7,6 @@ function SearchForm(props) {
 
   async function handleSearchSubmit(e) {
     e.preventDefault();
-    console.log(`Searching for ${searchTxt}`);
     const results = await beginSearch(searchTxt);
     props.setPhotos(results);
   }
