@@ -31,7 +31,7 @@ function SearchResults(props) {
         {photos.map((photo) => {
           return (
             <div className="search-result" key={photo.id}>
-              <a href={photo.src.large} target="_blank">
+              <a href={photo.src.large} target="_blank" rel="noreferrer">
                 <img src={photo.src.large} alt={photo.alt} />
                 <p>{photo.alt}</p>
               </a>

@@ -4,7 +4,7 @@ let perPage = 6;
 
 async function beginSearch(searchTxt) {
 
-  if(previousSearchTxt != searchTxt) {
+  if(previousSearchTxt !== searchTxt) {
     pageNum = 1;
     perPage = 6;
   }
