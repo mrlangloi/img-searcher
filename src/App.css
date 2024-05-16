@@ -147,10 +147,11 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   background-color: ivory;
+  opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
-.img-card.loaded {
+.loaded {
   opacity: 1;
 }
 
@@ -159,7 +160,7 @@ form {
   height: 300px;
   object-fit: cover;
   margin-bottom: 10px;
-  transition: all 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 .img-card:hover img {

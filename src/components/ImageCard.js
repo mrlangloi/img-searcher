@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function ImageCard(props) {
 
@@ -6,8 +6,16 @@ function ImageCard(props) {
 
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      setLoaded(true);
+    }
+    img.src = photo.src.large;
+  }, [photo.src.large]);
+
   return (
-    <div className="img-card" key={photo.id}>
+    <div className={`img-card ${loaded ? "loaded" : ""}`}>
       <a href={photo.src.large} target="_blank" rel="noreferrer">
         <img src={photo.src.large} alt={photo.alt} />
         <p>{photo.alt}</p>
