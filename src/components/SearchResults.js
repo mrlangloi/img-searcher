@@ -1,5 +1,6 @@
 import React from 'react';
 import { loadMore } from '../utils/search';
+import ImageCard from './ImageCard';
 import Placeholder from './Placeholder';
 
 function SearchResults(props) {
@@ -30,12 +31,7 @@ function SearchResults(props) {
       <div className="search-results">
         {photos.map((photo) => {
           return (
-            <div className="search-result" key={photo.id}>
-              <a href={photo.src.large} target="_blank" rel="noreferrer">
-                <img src={photo.src.large} alt={photo.alt} />
-                <p>{photo.alt}</p>
-              </a>
-            </div>
+            <ImageCard photo={photo} key={photo.id}/>
           )
         })}
       </div>
