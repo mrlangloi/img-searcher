@@ -71,6 +71,7 @@ body {
 
 .doc-p-div {
   flex-flow: column;
+  color: white;
 }
 
 .about-div {
