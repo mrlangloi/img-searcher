@@ -8,7 +8,7 @@ function SearchImages() {
 
   return (
     <div className="search-images-div">
-      <h1>Image Search App</h1>
+      <h1>Image Search</h1>
 
       <SearchForm setPhotos={setPhotos} />
 

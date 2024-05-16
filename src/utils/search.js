@@ -4,8 +4,8 @@ let perPage = 6;
 
 async function beginSearch(searchTxt) {
 
+  // Reset how many images are displayed if the search text has changed
   if(previousSearchTxt !== searchTxt) {
-    pageNum = 1;
     perPage = 6;
   }
 
@@ -13,6 +13,7 @@ async function beginSearch(searchTxt) {
 
   previousSearchTxt = searchTxt;
 
+  // I can't seem to get .env to work, so I'm just going to hardcode the API key
   const response = await fetch(url, {
     headers: {
       Authorization: "fO5dcMGzL2H5cF1qGtKwGhrW9LEMzowY2Ng3pcGIHoonmttzmMZovzT7"
