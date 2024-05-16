@@ -3,19 +3,36 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 
-  const [active, setActive] = useState("active");
+  const [style, setStyle] = useState("navbar-ul")
+  const [active, setActive] = useState("");
+
+  function navbarToggle() {
+    style === "navbar-ul" ? setStyle("navbar-ul responsive") : setStyle("navbar-ul");
+  }
+
+  function handleClick(link) {
+    setActive(link);
+    if (style === "navbar-ul responsive") {
+      setStyle("navbar-ul");
+    }
+  }
 
   return (
     <nav className="navbar">
-      <Link to="/" className="site-home" onClick={() => setActive("Search")}>Search</Link>
-      <ul className="navbar-ul">
-        <li className={active === "Documentation" ? "active" : ""} onClick={() => setActive("Documentation")}>
+      <Link to="/" className="site-home" onClick={() => handleClick("")}>Search</Link>
+      <ul className={style}>
+        <li className={active === "Documentation" ? "active" : ""} onClick={() => handleClick("Documentation")}>
           <Link to="/Documentation">Documentation</Link>
         </li>
-        <li className={active === "About" ? "active" : ""} onClick={() => setActive("About")}>
+        <li className={active === "About" ? "active" : ""} onClick={() => handleClick("About")}>
           <Link to="/About">About</Link>
         </li>
       </ul>
+      <div className="navbar-toggler" onClick={() => navbarToggle()}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
     </nav>
   );
 }
