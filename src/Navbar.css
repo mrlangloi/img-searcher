@@ -61,10 +61,10 @@
 @media screen and (max-width: 768px) {
   .navbar-ul {
     position: fixed;
-    top: 5vh;
+    top: 6vh;
     right: 0;
     width: 40%;
-    height: 95vh;
+    height: 94vh;
     margin: 0;
     padding: 0;
     background-color: #2b2a33;
