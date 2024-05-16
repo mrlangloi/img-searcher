@@ -6,6 +6,8 @@ function ImageCard(props) {
 
   const [loaded, setLoaded] = useState(false);
 
+  // Waits for the image to load before setting the loaded state to true
+  // Once loaded, the image will fade in using CSS
   useEffect(() => {
     const img = new Image();
     img.onload = () => {
