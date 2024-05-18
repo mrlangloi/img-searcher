@@ -7,10 +7,12 @@ function Navbar() {
   const [style, setStyle] = useState("navbar-ul")
   const [active, setActive] = useState("");
 
+  // Function to toggle the navbar on smaller screens
   function navbarToggle() {
     style === "navbar-ul" ? setStyle("navbar-ul responsive") : setStyle("navbar-ul");
   }
 
+  // Function to set the current active navbar link to highlight
   function handleClick(link) {
     setActive(link);
     if (style === "navbar-ul responsive") {
